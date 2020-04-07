@@ -1,0 +1,177 @@
+<html>
+    <link rel="stylesheet" href="reset.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin View Accounts</title>
+        <link rel="stylesheet" href="./reset.css">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="portal">
+                <h3 style="background-color: grey; margin: 8px; padding: 5px; line-height: 20px">Client Portal<br>Account #: XAU000{{myID}}</h3>
+            </div><br><br><br><br><br>
+
+
+            <div class="header" >
+                <h1 style="margin-top: -80px">BUY GOLD</h1>
+            </div>
+
+
+            <div class="body">
+
+                <nav class="left-panel">
+                    <ul class="left-panel-list">
+                        <li class="left-panel-list-item"><a href="../balance/{{myID}}">My Balances</a></li><br>
+                        <li class="left-panel-list-item"><a href="../transfer/{{myID}}">Transfer Cash</li><br>
+                        <li class="left-panel-list-item"><a href="../buyGold/{{myID}}">Buy Gold</li><br>
+                        <li class="left-panel-list-item"><a href="../account_info/{{myID}}">Account Details<a></li><br>
+                        <li class="left-panel-list-item"><a href="../selectLogin">Log Out</a></li>
+                    </ul>
+                </nav>
+
+                <div class="main">
+                    <p>Available balance: $ {{client.cashBalance}} </p><br><br>
+                    <p>Purchase by amount or value: </p><br>
+                    <form id="addperson" action="/accounts" method="post">
+                        <label class="radio">
+                            <input type="radio" name="answer">
+                            Weight (oz)
+                        </label>
+                        
+                        <label class="radio"> 
+                            <input type="radio" name="answer">
+                            Cash value ($)
+                        </label><br><br><br>
+
+                        <label>Please enter gold {weight OR $ amount} to purchase: 
+                            <br><input type="email" name="email" size="10" maxlength="100">
+                        </label><br><br>
+                        
+                        <input type="submit" value="Buy Gold!">
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+    
+<style> 
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font-family: geneva;
+        vertical-align: baseline;
+    }
+    input[type=submit] {
+        background-color: #4CAF50;
+        border: none;
+        font-size: 20px;
+        color: white;
+        padding: 12px 24px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+    .header {
+        height: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    /*                        border-bottom: 1px solid black;
+    */                    }
+    .body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+    }
+    .left-panel {
+        width: 240px;
+    /*                        border-right: 1px solid black;
+    */                    }
+    .left-panel-list {
+        list-style: initial;
+        list-style-type: none;
+        padding-left: 20px;
+    }
+    .main {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .left-panel li a:link,
+    .left-panel li a:visited
+    {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+    }
+
+    .left-panel li a:hover, 
+    .left-panel li a:active{
+         color: #71c9ce;
+    /*                        border-bottom: 3px solid #71c9ce;
+    */                    }
+
+    .left-panel-list-item {
+        background-color: grey;
+        margin-right: 30px;
+        text-align: center;
+        padding-top: 8px;
+        color: #71c9ce;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    body {
+        line-height: 1;
+        background-color: lightgrey;
+    }
+    ol, ul {
+        list-style: none;
+        padding-top: 20px;
+    }
+    li {
+        padding-bottom: 10px;
+        font color: red;
+    }
+    .portal {
+        position: absolute;
+        color: #71c9ce;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+</style>
+
+</html>

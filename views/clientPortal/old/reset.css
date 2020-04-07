@@ -1,0 +1,121 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: geneva;
+/*	font: inherit;
+	*/vertical-align: baseline;
+}
+
+.main {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.left-panel li a:link,
+.left-panel li a:visited
+{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+.left-panel li a:hover, 
+.left-panel li a:active
+{
+    border-bottom: 3px solid #71c9ce;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+.body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+.left-panel {
+  width: 200px;
+  height: 1000px;
+  border-right: 1px solid black;
+}
+.left-panel-list {
+  padding-left: 20px;
+}
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background-color: lightgrey;
+}
+ol, ul {
+	list-style: none;
+	padding-top: 20px;
+}
+li {
+	padding-bottom: 10px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	margin: 20px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.portal {
+	position: absolute;
+	color: #71c9ce;
+	margin-top: 10px;
+	margin-left: 10px;
+}

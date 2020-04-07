@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Accounts</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+  <link rel="stylesheet" type="text/css" href="css/admin_style.css">
+  <link rel="stylesheet" type="text/css" href="css/admin_main.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+  <!--   <link rel="stylesheet" href="./style.css">
+ -->
+  <script type="text/javascript">
+    document.getElementsByClassName("sidebarOff").disabled = true
+  </script>
+  <link rel="shortcut icon" type="image/png" href="css/bank.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+    body {
+      overflow-x: hidden;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 992px) {
+      table tbody tr td:nth-child(1):before {
+        content: "Account #";
+      }
+
+      table tbody tr td:nth-child(2):before {
+        content: "Type";
+      }
+
+      table tbody tr td:nth-child(3):before {
+        content: "User:PW";
+      }
+
+      table tbody tr td:nth-child(4):before {
+        content: "Cash";
+      }
+
+      table tbody tr td:nth-child(5):before {
+        content: "Gold";
+      }
+
+      table tbody tr td:nth-child(6):before {
+        content: "Manager";
+      }
+
+      table tbody tr td:nth-child(7):before {
+        content: "Branch";
+      }
+    }
+
+    /* Toggle Styles */
+
+    #viewport {
+      padding-left: 250px;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    #content {
+      width: 100%;
+      position: relative;
+      margin-right: 0;
+    }
+
+    /* Sidebar Styles */
+
+    #sidebar {
+      z-index: 1000;
+      position: fixed;
+      left: 250px;
+      width: 250px;
+      height: 100%;
+      margin-left: -250px;
+      overflow-y: auto;
+      background: #37474F;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    #sidebar header {
+      background-color: #263238;
+      font-size: 18px;
+      line-height: 52px;
+      text-align: center;
+    }
+
+    #sidebar header a {
+      color: #fff;
+      display: block;
+      text-decoration: none;
+    }
+
+    #sidebar header a:hover {
+      color: #fff;
+    }
+
+    #sidebar .nav {}
+
+    #sidebar .nav a {
+      background: none;
+      border-bottom: 1px solid #455A64;
+      color: #CFD8DC;
+      font-size: 16px;
+      padding: 16px 24px;
+    }
+
+    #sidebar .nav a:hover {
+      background: none;
+      color: #ECEFF1;
+    }
+
+    #sidebar .nav a i {
+      margin-right: 16px;
+    }
+    .deleteButton {
+      color: saddlebrown;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div id="viewport">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebarOff">
+      <header>
+        <a href="#">ADMIN PORTAL</a>
+      </header>
+      <ul class="nav">
+      <li>
+        <a href="../accounts">
+          <i style="padding-right:11px" class="zmdi zmdi-money"></i> Accounts
+        </a>
+      </li>
+      <li>
+        <a href="../clients">
+          <i style="padding-right:10px" class="zmdi zmdi-account"></i>Clients
+        </a>
+      </li>
+      <li>
+        <a href="../users">
+          <i style="padding-right:8px" class="zmdi zmdi-accounts-alt"></i>Users
+        </a>
+      </li>
+      <li>
+        <a href="../employees">
+          <i style="padding-right:13px" style="padding-right:14px" class="zmdi zmdi-odnoklassniki"></i>Employees
+        </a>
+      </li>
+      <li>
+        <a href="../branches">
+          <i style="padding-right:8px" class="zmdi zmdi-balance"></i>Branches
+        </a>
+      </li>
+      <li>
+        <a href="../loginPage">
+          <i  style="padding-right:4px" class="zmdi zmdi-long-arrow-return"></i> Log Out
+        </a>
+      </li>
+    </ul>
+    </div>
+    <!-- Content -->
+    <div id="content">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"><i class="zmdi zmdi-odnoklassniki"></i>
+              </a>
+            </li>
+            <li><a href="#">Employee # 0001</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="limiter" style="margin-top: 0">
+      <h1 style="margin-left: 28px">Active Accounts</h1>
+
+      <div class="container-table100">
+        <div class="wrap-table100">
+          <div class="table100">
+            <table>
+              <thead>
+                <tr class="table100-head" style="background-color: #455A64">
+                  <th class="column1">Account</th>
+                  <!--                 <th class="column2">Client</th>
+ -->
+                  <th class="column2">Type</th>
+                  <th class="column3">User : PW</th>
+                  <!--                 <th class="column5">pw</th>
+ -->
+                  <th class="column4">Cash</th>
+                  <th class="column5">Gold</th>
+                  <th class="column6">Manager</th>
+                  <th class="column7">Branch</th>
+                  <th class="column8"></th>
+                  <th class="column9"></th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each accounts}}
+                <tr>
+                  <td class="column1">XAU000{{accountID}}</td>
+                  <!--                     <td class="column2">{client name}</td> 
+ -->
+                  <td class="column2">{{accountType}}</td>
+                  <td class="column3">{{username}} : {{password}}</td>
+                  <!--                     <td class="column5">{{password}}</td> 
+ -->
+                  <td class="column4">${{cashBalance}}</td>
+                  <td class="column5">{{goldBalance}} oz.</td>
+                  <td class="column6">{{firstName}} {{lastName}}</td>
+                  <td class="column7">{{branchCity}}</td>
+                  <td class="column8"><button class="deleteButton" onclick="deletePerson({{accountID}})">Delete</button>
+                  </td>
+                  <td class="column9"><a href="/accounts/{{accountID}}">Update</a></td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table><br>
+
+            <h1>Add New Account</h1><br>
+
+            <form id="addperson" action="/accounts" method="post">
+              <label for="accountType"> Account Type: </label>
+              <select name="accountType" id="amount">
+                <option value="Personal"> Personal</option>
+                <option value="Joint"> Joint</option>
+                <option value="Corporate"> Corporate</option>
+              </select><br><br>
+              Username: <br><input type="text" name="username"><br>
+              Password: <br><input type="text" name="password"><br>
+              Cash Balance: <br><input type="text" name="cashBalance"><br>
+              Gold Balance: <br><input type="text" name="goldBalance"><br>
+              Branch city: <select name="branch">
+                <option value="NULL"></option>
+                {{#each branches}}
+                <option value="{{branchID}}">{{branchCity}}</option>
+                {{/each}}
+              </select><br><br>
+              <input type="submit" style="padding: 6px; background-color: lightgrey" value=" Create Account ">
+            </form><br><br>
+
+          </div>
+        </div>
+      </div>
+      <!-- <div class="container-fluid">
+ -->
+      <!-- </div>
+ -->
+    </div>
+
+
+
+  </div>
+
+  <script>
+    function deletePerson(accountID) {
+      fetch('/accounts/' + accountID, {
+        method: 'DELETE',
+      }).then(() => {
+        window.location.reload();
+      });
+    }
+  </script>
+</body>
+
+</html>

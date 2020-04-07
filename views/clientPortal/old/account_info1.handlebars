@@ -1,0 +1,152 @@
+<html>
+    <link rel="stylesheet" href="reset.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin View Accounts</title>
+        <link rel="stylesheet" href="./reset.css">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="portal">
+                <h3 style="background-color: grey; margin: 8px; padding: 5px; line-height: 20px">Client Portal<br>Account #: XAU000{{myID}}</h3>
+            </div><br><br><br><br><br>
+
+
+            <div class="header" >
+                <h1 style="margin-top: -80px">ACCOUNT DETAILS</h1>
+            </div>
+
+
+            <div class="body">
+
+                <nav class="left-panel">
+                    <ul class="left-panel-list">
+                        <li class="left-panel-list-item"><a href="../balance/{{myID}}">My Balances</a></li><br>
+                        <li class="left-panel-list-item"><a href="../transfer/{{myID}}">Transfer Cash</li><br>
+                        <li class="left-panel-list-item"><a href="../buyGold/{{myID}}">Buy Gold</li><br>
+                        <li class="left-panel-list-item"><a href="../account_info/{{myID}}">Account Details<a></li><br>
+                        <li class="left-panel-list-item"><a href="../selectLogin">Log Out</a></li>
+                    </ul>
+                </nav>
+
+                <div class="main">
+                    <p>ACCOUNT #:</p><br>
+                    <p>XAU000{{acct.accountID}}</p><br><br>
+                    <p>ACCOUNT TYPE: </p><br>
+                    <p>{{acct.accountType}}</p><br><br>
+                    <p>AUTHORIZED USERS: </p><br>
+                    <p>
+                        {{namesArray}}
+                    </p><br><br>
+                    <p>ACCOUNT USERNAME: </p><br>
+                    <p>{{acct.username}}</p><br><br>
+                    <p>PRIMARY BRANCH: </p><br>
+                    <p>{{acct.branchCity}}</p><br><br>
+                </div>
+
+
+            </div>
+        </div>
+    </body>
+    
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font-family: geneva;
+        vertical-align: baseline;
+    }
+    p {
+        font-weight: bold;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+    .header {
+        height: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    /*                        border-bottom: 1px solid black;
+    */                    }
+    .body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+    }
+    .left-panel {
+        width: 240px;
+    /*                        border-right: 1px solid black;
+    */                    }
+    .left-panel-list {
+        list-style: initial;
+        list-style-type: none;
+        padding-left: 20px;
+    }
+    .main {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .left-panel li a:link,
+    .left-panel li a:visited
+    {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+    }
+
+    .left-panel li a:hover, 
+    .left-panel li a:active{
+         color: #71c9ce;
+    /*                        border-bottom: 3px solid #71c9ce;
+    */                    }
+
+    .left-panel-list-item {
+        background-color: grey;
+        margin-right: 30px;
+        text-align: center;
+        padding-top: 8px;
+        color: #71c9ce;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    body {
+        line-height: 1;
+        background-color: lightgrey;
+    }
+    ol, ul {
+        list-style: none;
+        padding-top: 20px;
+    }
+    li {
+        padding-bottom: 10px;
+        font color: red;
+    }
+    .portal {
+        position: absolute;
+        color: #71c9ce;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+</style>
+
+</html>

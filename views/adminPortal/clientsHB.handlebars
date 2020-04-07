@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Clients</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+  <link rel="stylesheet" type="text/css" href="css/admin_style.css">
+  <link rel="stylesheet" type="text/css" href="css/admin_main.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'>
+  <!--   <link rel="stylesheet" href="./style.css">
+ -->
+  <script type="text/javascript">
+    document.getElementsByClassName("sidebarOff").disabled = true
+  </script>
+  <link rel="shortcut icon" type="image/png" href="css/bank.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+    @media screen and (max-width: 992px) {
+      table tbody tr td:nth-child(1):before {
+        content: "Client ID";
+      }
+
+      table tbody tr td:nth-child(2):before {
+        content: "First Name";
+      }
+
+      table tbody tr td:nth-child(3):before {
+        content: "Last Name";
+      }
+
+      table tbody tr td:nth-child(4):before {
+        content: "Citizenship";
+      }
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    }
+
+    /* Toggle Styles */
+
+    #viewport {
+      padding-left: 250px;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    #content {
+      width: 100%;
+      position: relative;
+      margin-right: 0;
+    }
+
+    /* Sidebar Styles */
+
+    #sidebar {
+      z-index: 1000;
+      position: fixed;
+      left: 250px;
+      width: 250px;
+      height: 100%;
+      margin-left: -250px;
+      overflow-y: auto;
+      background: #37474F;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    #sidebar header {
+      background-color: #263238;
+      font-size: 18px;
+      line-height: 52px;
+      text-align: center;
+    }
+
+    #sidebar header a {
+      color: #fff;
+      display: block;
+      text-decoration: none;
+    }
+
+    #sidebar header a:hover {
+      color: #fff;
+    }
+
+    #sidebar .nav {}
+
+    #sidebar .nav a {
+      background: none;
+      border-bottom: 1px solid #455A64;
+      color: #CFD8DC;
+      font-size: 16px;
+      padding: 16px 24px;
+    }
+
+    #sidebar .nav a:hover {
+      background: none;
+      color: #ECEFF1;
+    }
+
+    #sidebar .nav a i {
+      margin-right: 16px;
+    }
+
+    .column1 {
+      width: 130px;
+      padding-left: 40px;
+    }
+
+    .column2 {
+      width: 100px;
+    }
+
+    .column3 {
+      width: 100px;
+    }
+
+    .column4 {
+      width: 120px;
+      /*  text-align: right;
+  */
+    }
+
+    .column5 {
+      width: 80px;
+      /*  text-align: right;
+  */
+    }
+
+    .column6 {
+      width: 80px;
+      /*  padding-right: 62px;
+  */
+    }
+
+    .column7 {
+      width: 80px;
+      /*  text-align: right;
+  */
+    }
+
+    .deleteButton {
+      color: saddlebrown;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div id="viewport">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebarOff">
+      <header>
+        <a href="#">ADMIN PORTAL</a>
+      </header>
+      <ul class="nav">
+      <li>
+        <a href="../accounts">
+          <i style="padding-right:11px" class="zmdi zmdi-money"></i> Accounts
+        </a>
+      </li>
+      <li>
+        <a href="../clients">
+          <i style="padding-right:10px" class="zmdi zmdi-account"></i>Clients
+        </a>
+      </li>
+      <li>
+        <a href="../users">
+          <i style="padding-right:8px" class="zmdi zmdi-accounts-alt"></i>Users
+        </a>
+      </li>
+      <li>
+        <a href="../employees">
+          <i style="padding-right:13px" style="padding-right:14px" class="zmdi zmdi-odnoklassniki"></i>Employees
+        </a>
+      </li>
+      <li>
+        <a href="../branches">
+          <i style="padding-right:8px" class="zmdi zmdi-balance"></i>Branches
+        </a>
+      </li>
+      <li>
+        <a href="../loginPage">
+          <i  style="padding-right:4px" class="zmdi zmdi-long-arrow-return"></i> Log Out
+        </a>
+      </li>
+    </ul>
+    </div>
+    <!-- Content -->
+    <div id="content">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#"><i class="zmdi zmdi-odnoklassniki"></i>
+              </a>
+            </li>
+            <li><a href="#">Employee # 0001</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="limiter" style="margin-top: 0">
+      <h1 style="margin-left: 28px">Current Clients</h1>
+
+      <div class="container-table100">
+        <div class="wrap-table100">
+          <div class="table100">
+            <table>
+              <thead>
+
+
+
+
+                <tr class="table100-head" style="background-color: #455A64">
+                  <th class="column1">Client ID</th>
+                  <th class="column2">First Name</th>
+                  <th class="column3">Last Name</th>
+                  <th class="column4">Citizenship</th>
+                  <!--                 <th class="column5">Branch</th> -->
+                  <th class="column5"></th>
+                  <th class="column6"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {{#each clients}}
+                <tr>
+                  <td class="column1">{{clientID}}</td>
+                  <td class="column2">{{firstName}}</td>
+                  <td class="column3">{{lastName}}</td>
+                  <td class="column4">{{countryResidency}}</td>
+                  <!-- <td class="column5">{{branchCity}}</td> -->
+                  <td class="column5"><button class="deleteButton" onclick="deletePerson({{clientID}})">Delete</button>
+                  </td>
+                  <td class="column6"><a href="/clients/{{clientID}}">Update</a></td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+            <br>
+
+            <h1>Add New Client</h1><br>
+
+            <form id=" addperson" action="/clients" method="post">
+              First name:<br> <input type="text" name="fname">
+              <br>Last name: <br><input type="text" name="lname">
+              <br>Country of Citizenship: <br><input type="text" name="country"><br>
+              <!-- Branch city: <select name="branch"> 
+            <option value="NULL"></option>
+            {{#each branches}}
+                <option value="{{branchID}}">{{branchCity}}</option>
+            {{/each}}
+            </select><br><br> -->
+              <input style="padding: 6px; background-color: lightgrey" type="submit" value=" Add New Client ">
+            </form><br><br>
+
+          </div>
+        </div>
+      </div>
+      <!-- <div class="container-fluid">
+ -->
+      <!-- </div>
+ -->
+    </div>
+
+
+
+  </div>
+  <script>
+    function deletePerson(clientID) {
+      fetch('/clients/' + clientID, {
+        method: 'DELETE',
+      }).then(() => {
+        window.location.reload();
+      });
+    }
+  </script>
+
+</body>
+
+</html>

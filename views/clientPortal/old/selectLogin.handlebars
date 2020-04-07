@@ -1,0 +1,57 @@
+<html>
+<link rel="stylesheet" href="./reset.css">
+<title>Select Login</title>
+<style>
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.left-box {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.right-box {
+  background: #71c9ce;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-button {
+  font-size: 22px;
+  font-family: verdana;
+  text-transform: uppercase;
+}
+.left-box .login-button {
+  color: #71c9ce;
+}
+.right-box .login-button {
+  color: #e3fdfd;
+}
+* a:link,
+* a:visited{
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+}
+* a:hover, 
+* a:active{
+  border-bottom: 3px solid #F68656;
+}
+</style>
+<body>
+      <div class="container" style="height: 700px">
+        <div class="left-box">
+          <a class="login-button" href="./adminLogin">Employee Login</a>
+        </div>
+        <div class="right-box">
+          <a class="login-button" href="./clientLogin">Client Login</a>
+        </div>
+      </div>
+</body>
+</html>

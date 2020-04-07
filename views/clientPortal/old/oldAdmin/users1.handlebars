@@ -1,0 +1,86 @@
+<html>
+    <link rel="stylesheet" href="./reset.css">
+    <div class="main">
+        <h2><b>ADD ACCOUNT USER</b></h2><br> 
+        
+        <form id="addperson" action="/users" method="post">
+        
+        Account Number: <select name="accountSelection"> 
+            <option value="NULL"></option>
+            {{#each accounts}} 
+                <option value="{{accountID}}">{{accountID}}</option>
+            {{/each}}
+            </select><br><br>    
+
+        Client Name: <select name="clientSelection"> 
+            <option value="NULL"></option>
+            {{#each clients}}
+                <option value="{{clientID}}">{{firstName}} {{lastName}}</option>
+            {{/each}}
+            </select><br><br>   
+
+            <input type="submit" value="Add New User">
+        </form><br><br>
+        <h2>ACTIVE USERS</h2>
+
+        <table>
+            <tr>
+            <td>Account #</td>
+            <td>Account Type</td>
+            <td>Client ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            </tr>
+            {{#each users}} 
+            <tr> 
+                <td>{{accountID}}</td> 
+                <td>{{accountType}}</td> 
+                <td>{{clientID}}</td> 
+                <td>{{firstName}}</td> 
+                <td>{{lastName}}</td> 
+                <td><button onclick="deletePerson({{id}})">Delete</button></td>
+                <td><a href="/users/{{id}}">Update</a></td>
+            </tr> 
+            {{/each}} 
+        </table>
+            </tbody> 
+        </table> 
+    </div>
+
+    <br><br>
+    <br><br>
+
+<!--     <h3>Add new people:</h3>
+    <form id="addperson" action="/clients" method="post">
+        First name: <input type="text" name="fname"><br>
+        Last name: <input type="text" name="lname"><br>
+        Homeworld: <select name="homeworld"> 
+            {{#each planets}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select><br>
+        Age: <input type="number" name="age"><br>
+        <input type="submit" value="Submit">
+     </form>
+    <br/>
+
+    <form id='filter_people' action='' method=''>
+ 
+        <label> Filter by homeworld </label>
+        <select id='homeworld_filter' name="homeworld"> 
+            {{#each planets}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select><br>
+        <input type="button" value="Filter" onclick="filterPeopleByHomeworld()">
+    </form>
+
+    <form id='search_people' action='' method=''>
+
+
+        <label> Search people for first name starting with:</label>
+        <input id='first_name_search_string' type='text' name='first_name_search_string' value=''>
+        <input type="button" value="Search" onclick="searchPeopleByFirstName()">
+    </form> -->
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>My Balances</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'><link rel="stylesheet" href="./style.css">
+  <script type="text/javascript">
+    document.getElementsByClassName("sidebarOff").disabled = true
+  </script>
+  <link rel="shortcut icon" type="image/png" href="../css/coins.png"/>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="viewport">
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebarOff">
+    <header>
+      <a href="#">CLIENT PORTAL</a>
+    </header>
+    <ul class="nav">
+      <li>
+        <a href="../balance">
+          <i style="padding-right:6px" class="zmdi zmdi-money"></i> My Balances
+        </a>
+      </li>
+      <li>
+        <a href="../transfer">
+          <i style="padding-right:3px" class="zmdi zmdi-accounts-alt"></i>Transfer Cash
+        </a>
+      </li>
+      <li>
+        <a href="../buyGold">
+          <i style="padding-right:2px" class="zmdi zmdi-card"></i>Buy Gold
+        </a>
+      </li>
+      <li>
+        <a href="../account_info">
+          <i style="padding-right:5px" class="zmdi zmdi-chart"></i>Account Details
+        </a>
+      </li>
+      <li>
+        <a href="../loginPage">
+          <i class="zmdi zmdi-long-arrow-return"></i> Log Out
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Content -->
+  <div id="content">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#"><i class="zmdi zmdi-account"></i>
+            &nbsp&nbspAccount # XAU000{{myID}}</a>
+          </li>
+<!--           <li><a href="#">Account # XAU000{{myID}}</a></li>
+ -->        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <h1>My Balances</h1><br>
+      <h4>
+        Welcome {{firstName}} {{lastName}},
+      </h4><br>
+      <p>
+        Cash Balance:  
+        <code>${{balance}}</code>
+      </p>
+      <p>
+        Gold Holdings:  
+        <code>{{gold}} ounces (${{goldEquiv}})</code>
+      </p>
+    </div>
+
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+  body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+
+  /* Toggle Styles */
+
+  #viewport {
+    padding-left: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  #content {
+    width: 100%;
+    position: relative;
+    margin-right: 0;
+  }
+
+  /* Sidebar Styles */
+
+  #sidebar {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 250px;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #37474F;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  #sidebar header {
+    background-color: #263238;
+    font-size: 18px;
+    line-height: 52px;
+    text-align: center;
+  }
+
+  #sidebar header a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+  }
+
+  #sidebar header a:hover {
+    color: #fff;
+  }
+
+  #sidebar .nav{
+    
+  }
+
+  #sidebar .nav a{
+    background: none;
+    border-bottom: 1px solid #455A64;
+    color: #CFD8DC;
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+
+  #sidebar .nav a:hover{
+    background: none;
+    color: #ECEFF1;
+  }
+
+  #sidebar .nav a i{
+    margin-right: 16px;
+  }
+</style>
+</html>

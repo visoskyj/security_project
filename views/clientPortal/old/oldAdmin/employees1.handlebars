@@ -1,0 +1,40 @@
+<html>
+    <link rel="stylesheet" href="./reset.css">
+    <div class="main">
+        <h2><b>NEW EMPLOYEE INFORMATION:</b></h2><br> 
+        
+        <form id="addperson" action="/employees" method="post">
+            First name:<br> <input type="text" name="fname"><br>
+            <br>Last name: <br><input type="text" name="lname"><br><br>
+            Branch city: <select name="branch"> 
+            <option value="NULL"></option>
+            {{#each branches}}
+                <option value="{{branchID}}">{{branchCity}}</option>
+            {{/each}}
+            </select><br><br>
+            <input type="submit" value="Add Employee">
+        </form><br><br>
+
+        <h2>ACCOUNT MANAGERS</h2>
+        <table>
+            <tr>
+            <td>Employee ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Branch Location</td>
+            </tr>
+            {{#each employees}} 
+            <tr> 
+                <td>{{employeeID}}</td> 
+                <td>{{firstName}}</td> 
+                <td>{{lastName}}</td> 
+                <td>{{branchCity}}</td> 
+            </tr> 
+            {{/each}} 
+        </table>
+
+
+            </tbody> 
+        </table> 
+    </div>
+</html>

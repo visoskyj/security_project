@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<title>Admin Portal</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+    crossorigin="anonymous"></script>
+
+    {{#each jsscripts}}
+    	<script src="/static/{{this}}"></script>
+    {{/each}}
+
+    <link rel="stylesheet" href="./reset.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="portal">
+      <h3 style="background-color: grey; margin: 8px; padding: 5px">Admin Portal</h3>
+    </div>
+    <div>
+      <h1 class="header"></h1>
+    </div>
+    <div class="body">
+      <nav class="left-panel">
+        <ul class="left-panel-list">
+          <li class="left-panel-list-item"><a href="../accounts">Accounts</li>
+          <li class="left-panel-list-item"><a href="../clients">Clients</li>
+          <li class="left-panel-list-item"><a href="../users">Users</li>
+          <li class="left-panel-list-item"><a href="../employees">Employees<a></li>
+          <li class="left-panel-list-item"><a href="../branches">Branches</a></li>
+        </ul>
+      </nav>
+      <div>
+      	{{{body}}}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

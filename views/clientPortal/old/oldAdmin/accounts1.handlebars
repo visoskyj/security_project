@@ -1,0 +1,90 @@
+<html>
+    <link rel="stylesheet" href="./reset.css">
+    <div class="main">
+        <h2><b>ADD NEW ACCOUNT</b></h2><br> 
+        
+    <form id="addperson" action="/accounts" method="post">
+        <label for="accountType"> Account Type: </label>
+            <select name="accountType" id="amount">
+              <option value="Personal"> Personal</option>
+              <option value="Joint"> Joint</option>
+              <option value="Corporate"> Corporate</option>
+            </select><br><br>
+        Username: <input type="text" name="username"><br><br>
+        Password: <input type="text" name="password"><br><br>
+        Cash Balance: <input type="text" name="cashBalance"><br><br>
+        Gold Balance: <input type="text" name="goldBalance"><br><br>
+        Branch city: <select name="branch"> 
+            <option value="NULL"></option>
+            {{#each branches}}
+                <option value="{{branchID}}">{{branchCity}}</option>
+            {{/each}}
+            </select><br><br>      
+        <!-- Account Manager: <select name="accountManager"> 
+            <option value="NULL"></option>
+            {{#each accountManagers}}
+                <option value="{{employeeID}}">{{firstName}} {{lastName}}</option>
+            {{/each}}
+            </select><br><br>    -->
+        <input type="submit" value="Create Account">
+    </form>
+    <br/><br>
+        <h2>ACTIVE ACCOUNTS</h2>
+        <table>
+            <tr>
+            <td>Acct #</td>
+            <td>Type</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Cash Balance</td>
+            <td>Gold Balance</td>
+            <td>Account Manager</td>
+            <td>Branch</td>
+            </tr>
+            {{#each accounts}} 
+            <tr> 
+                <td>{{accountID}}</td> 
+                <td>{{accountType}}</td> 
+                <td>{{username}}</td> 
+                <td>{{password}}</td> 
+                <td>$ {{cashBalance}}</td> 
+                <td>{{goldBalance}} oz.</td> 
+                <td>{{firstName}} {{lastName}}</td> 
+                <td>{{branchCity}}</td> 
+
+            </tr> 
+            {{/each}} 
+        </table>
+
+
+            </tbody> 
+        </table> 
+    </div>
+
+    <br><br>
+    <br><br>
+
+
+
+<!--     
+    <form id='filter_people' action='' method=''>
+ 
+        <label> Filter by homeworld </label>
+        <select id='homeworld_filter' name="homeworld"> 
+            {{#each planets}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select><br>
+        <input type="button" value="Filter" onclick="filterPeopleByHomeworld()">
+    </form>
+
+    <form id='search_people' action='' method=''>
+
+
+        <label> Search people for first name starting with:</label>
+        <input id='first_name_search_string' type='text' name='first_name_search_string' value=''>
+        <input type="button" value="Search" onclick="searchPeopleByFirstName()">
+    </form> 
+-->
+
+</html>

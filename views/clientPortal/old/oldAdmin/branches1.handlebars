@@ -1,0 +1,32 @@
+<html>
+    <link rel="stylesheet" href="./reset.css">
+    <div class="main">
+        <h2><b>ADD NEW BRANCH LOCATION</b></h2><br> 
+        
+        <form id="addperson" action="/branches" method="post">
+            Office Location: <input type="text" name="location"><br>
+            <br>Phone Number: <input type="text" name="phone"><br><br>
+            <input type="submit" value="Add Branch Location">
+        </form><br><br>
+
+        <h2>OPEN BRANCHES</h2>
+        <table>
+            <tr>
+            <td>Branch ID</td>
+            <td>City</td>
+            <td>Phone Number</td>
+            </tr>
+            {{#each branches}} 
+            <tr> 
+                <td>{{branchID}}</td> 
+                <td>{{branchCity}}</td> 
+                <td>{{branchPhone}}</td> 
+            </tr> 
+            {{/each}} 
+        </table>
+
+
+            </tbody> 
+        </table> 
+    </div>
+</html>
